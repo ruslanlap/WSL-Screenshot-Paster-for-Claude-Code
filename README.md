@@ -1,8 +1,3 @@
-# WSL-Screenshot-Paster-for-Claude-Code
-Ось короткий та зрозумілий `README.md` англійською мовою, який ідеально підійде для вашого скрипта на GitHub або для збереження в архіві.
-
----
-
 # WSL Screenshot Paster for Claude Code
 
 ## Description
@@ -32,6 +27,12 @@ Normally, pasting a screenshot into a CLI doesn't work. This script intercepts `
 2. Focus your Windows Terminal window where Claude Code is running.
 3. Press `Ctrl + V`.
 4. *Magic happens:* The script fetches the correct WSL path, pastes it, and instantly restores your original image to the clipboard so you can still paste it elsewhere!
+
+## Screenshots
+
+![Taking a screenshot and pasting into Claude Code](1.png)
+
+![Resulting WSL path recognized as an image in Claude Code](2.png)
 
 ## Autostart on Boot (Optional)
 
