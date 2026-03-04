@@ -1,5 +1,13 @@
 # WSL Screenshot Paster for Claude Code
 
+## Quick Start (EXE)
+
+1. Запусти `wsl_paste.exe`.
+2. Відкрий Windows Terminal з Claude Code у WSL.
+3. Роби скрін (`Win + Shift + S`) і вставляй `Ctrl + V`.
+
+Готово: вставка в термінал працює без додаткових налаштувань.
+
 ## Description
 
 This is a lightweight AutoHotkey v2 script for Windows 11. It allows you to seamlessly paste screenshots (taken via `Win + Shift + S`) directly into Claude Code running inside WSL via Windows Terminal.
@@ -11,15 +19,19 @@ Normally, pasting a screenshot into a CLI doesn't work. This script intercepts `
 * **OS:** Windows 11
 * **Terminal:** Windows Terminal
 * **Environment:** WSL (Windows Subsystem for Linux)
-* **Tool:** [AutoHotkey v2](https://www.autohotkey.com/) (v1 will not work)
+* **Tool:** `wsl_paste.exe` (recommended) or [AutoHotkey v2](https://www.autohotkey.com/) for `.ahk` script mode
 
 ## Setup & Installation
 
-1. Download and install AutoHotkey v2 from the official website.
-2. Create a new file named `wsl_paste.ahk` anywhere on your PC.
-3. Open the file in any text editor (Notepad, VS Code) and paste the script code into it.
-4. Save the file.
-5. Double-click `wsl_paste.ahk` to run it. You will see a green "H" icon in your system tray indicating it's active.
+### Option 1 (recommended)
+
+1. Run `wsl_paste.exe`.
+2. Keep it running in tray while you work in terminal.
+
+### Option 2 (script mode)
+
+1. Install AutoHotkey v2.
+2. Run `wsl_paste.ahk`.
 
 ## How to Use
 
@@ -40,4 +52,4 @@ If you want this script to run automatically every time you start your PC:
 
 1. Press `Win + R` to open the Run dialog.
 2. Type `shell:startup` and press Enter.
-3. Create a shortcut to your `wsl_paste.ahk` file and place it in this Startup folder.
+3. Create a shortcut to `wsl_paste.exe` (or `wsl_paste.ahk`) and place it in this Startup folder.
