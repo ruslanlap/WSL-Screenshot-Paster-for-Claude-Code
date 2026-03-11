@@ -1,7 +1,7 @@
 ﻿#Requires AutoHotkey v2.0
 
-; Works ONLY when the active window is Windows Terminal
-#HotIf WinActive("ahk_exe WindowsTerminal.exe")
+; Works when the active window is Windows Terminal, VS Code, or Cursor
+#HotIf WinActive("ahk_exe WindowsTerminal.exe") || WinActive("ahk_exe Code.exe") || WinActive("ahk_exe Cursor.exe")
 $^v:: {
     ; 1. If the clipboard has TEXT (not an image) – do a normal paste
     if (A_Clipboard != "") {
