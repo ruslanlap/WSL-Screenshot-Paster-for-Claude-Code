@@ -44,8 +44,16 @@ $^v:: {
 
     ; 4. Perform a "real" paste
     if (latestFile != "") {
-        drive := StrLower(SubStr(latestFile, 1, 1))
-        rest := StrReplace(SubStr(latestFile, 3), "\", "/")
+        ; Copy screenshot to a temp path with ASCII-only name to avoid
+        ; Claude Code failing to recognize paths with CJK chars or spaces
+        ; (e.g. OneDrive paths like "C:\Users\用户\OneDrive\Pictures\Screenshots").
+        tempDir := EnvGet("TEMP") "\claude-screenshots"
+        DirCreate(tempDir)
+        tempFile := tempDir "\screenshot-" A_Now ".png"
+        FileCopy(latestFile, tempFile, true)
+
+        drive := StrLower(SubStr(tempFile, 1, 1))
+        rest := StrReplace(SubStr(tempFile, 3), "\", "/")
         wslPath := "/mnt/" drive rest
 
         ; Save whatever is currently in the clipboard (image)
